@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="StudyGuard - A rule-based web research and learning assistant for students. Explain terms, save research clips, organize projects, store videos, audio, and notes with Google Drive integration.">
-  <title>StudyGuard - Web Research and Learning Assistant</title>
+  <meta name="description" content="StudyGuard is a browser extension that helps students understand academic terms, save research clips, organize study projects, and analyze URL safety. Store videos, audio, and notes with optional Google Drive integration.">
+  <title>StudyGuard - Web Research and Learning Assistant for Students</title>
   <style>
     :root {
       --primary: #4a90e2;
@@ -64,16 +64,75 @@
       margin-bottom: 16px;
     }
 
+    header .tagline {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
     header p {
-      font-size: 20px;
-      opacity: 0.9;
-      max-width: 700px;
+      font-size: 18px;
+      opacity: 0.95;
+      max-width: 800px;
       margin: 0 auto;
+    }
+
+    /* Purpose Section */
+    .purpose {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .purpose h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .purpose-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .purpose-card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    .purpose-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .purpose-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .purpose-card li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .purpose-card li:last-child {
+      border-bottom: none;
+    }
+
+    .purpose-card li::before {
+      content: "✓ ";
+      color: var(--success);
+      font-weight: 700;
     }
 
     /* Features */
     .features {
       padding: 60px 0;
+      background: var(--surface);
     }
 
     .features-grid {
@@ -84,10 +143,9 @@
     }
 
     .feature-card {
-      background: var(--surface);
+      background: var(--background);
       border-radius: 12px;
       padding: 24px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       text-align: center;
       transition: transform 0.3s;
     }
@@ -112,7 +170,6 @@
 
     /* Google Drive Integration */
     .drive-integration {
-      background: var(--surface);
       padding: 60px 0;
     }
 
@@ -150,19 +207,20 @@
 
     /* How It Works */
     .how-it-works {
-      background: var(--surface);
       padding: 60px 0;
+      background: var(--surface);
     }
 
     .steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 24px;
       margin-top: 40px;
     }
 
     .step {
       text-align: center;
+      padding: 20px;
     }
 
     .step-number {
@@ -224,6 +282,10 @@
       opacity: 0.8;
       font-size: 14px;
     }
+
+    footer .app-name {
+      font-weight: 700;
+    }
   </style>
 </head>
 <body>
@@ -232,9 +294,55 @@
     <div class="container">
       <div class="logo">🛡️</div>
       <h1>StudyGuard</h1>
-      <p>Your all-in-one web research and learning assistant. Understand terms, save clips, organize projects, and store videos, audio, and notes with Google Drive integration.</p>
+      <p class="tagline">Your Web Research and Learning Assistant</p>
+      <p>StudyGuard is a browser extension designed for students to understand complex academic terms, save important research content, organize study projects, and stay safe online with rule-based URL security analysis.</p>
     </div>
   </header>
+
+  <section class="purpose">
+    <div class="container">
+      <h2>What StudyGuard Does</h2>
+      <p style="font-size: 18px; max-width: 800px; margin: 0 auto;">StudyGuard helps students with web-based research by providing four essential tools in one extension.</p>
+      <div class="purpose-cards">
+        <div class="purpose-card">
+          <h3>📖 Understand Content</h3>
+          <ul>
+            <li>Select any text on a webpage</li>
+            <li>Get simple explanations of complex terms</li>
+            <li>Access built-in dictionary</li>
+            <li>Learn subject-specific concepts</li>
+          </ul>
+        </div>
+        <div class="purpose-card">
+          <h3>📌 Save Research</h3>
+          <ul>
+            <li>Clip important webpage content</li>
+            <li>Add notes and tags</li>
+            <li>Capture source URLs automatically</li>
+            <li>Store videos, audio, and notes</li>
+          </ul>
+        </div>
+        <div class="purpose-card">
+          <h3>📚 Organize Studies</h3>
+          <ul>
+            <li>Create research projects</li>
+            <li>Organize clips by subject</li>
+            <li>Search and filter saved content</li>
+            <li>Manage study resources</li>
+          </ul>
+        </div>
+        <div class="purpose-card">
+          <h3>🛡️ Stay Safe Online</h3>
+          <ul>
+            <li>Analyze URLs for suspicious patterns</li>
+            <li>Detect phishing indicators</li>
+            <li>Identify potentially unsafe links</li>
+            <li>Get risk-based recommendations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="features">
     <div class="container">
@@ -243,22 +351,22 @@
         <div class="feature-card">
           <div class="feature-icon">📖</div>
           <h3>Explain This</h3>
-          <p>Understand complex academic terms with simple, rule-based explanations.</p>
+          <p>Understand complex academic terms with simple, rule-based explanations using StudyGuard's built-in knowledge base.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">📌</div>
           <h3>WebClipper</h3>
-          <p>Save important webpage content with source, notes, and tags.</p>
+          <p>Save important webpage content with source information, notes, and tags for your research.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">📚</div>
           <h3>Research Organizer</h3>
-          <p>Organize clips, projects, and sources for your studies.</p>
+          <p>Organize clips, projects, and sources into structured research collections.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🛡️</div>
           <h3>LinkGuard</h3>
-          <p>Analyze URLs for suspicious patterns and potential threats.</p>
+          <p>Analyze URLs for suspicious patterns and get evidence-based risk assessments.</p>
         </div>
       </div>
     </div>
@@ -268,12 +376,12 @@
     <div class="container">
       <div class="drive-card">
         <h2>☁️ Google Drive Integration</h2>
-        <p style="font-size: 18px; margin-bottom: 20px;">Store and manage your research media files directly in Google Drive</p>
+        <p style="font-size: 18px; margin-bottom: 20px;">StudyGuard optionally connects to Google Drive for cloud storage of your research media</p>
         <div class="drive-features">
           <div class="drive-feature">
             <div class="drive-feature-icon">🎬</div>
             <h3>Videos</h3>
-            <p>Save lecture recordings and tutorials</p>
+            <p>Save lecture recordings</p>
           </div>
           <div class="drive-feature">
             <div class="drive-feature-icon">🎵</div>
@@ -283,12 +391,12 @@
           <div class="drive-feature">
             <div class="drive-feature-icon">📝</div>
             <h3>Notes</h3>
-            <p>Keep study notes and documents</p>
+            <p>Keep study documents</p>
           </div>
           <div class="drive-feature">
             <div class="drive-feature-icon">📎</div>
             <h3>Clips</h3>
-            <p>Backup your research clips</p>
+            <p>Backup research clips</p>
           </div>
         </div>
       </div>
@@ -297,22 +405,22 @@
 
   <section class="how-it-works">
     <div class="container">
-      <h2 style="text-align: center; font-size: 32px;">How It Works</h2>
+      <h2 style="text-align: center; font-size: 32px;">How StudyGuard Works</h2>
       <div class="steps">
         <div class="step">
           <div class="step-number">1</div>
           <h3>Select Content</h3>
-          <p>Highlight text, save media, or capture clips</p>
+          <p>Highlight text or save media on any webpage</p>
         </div>
         <div class="step">
           <div class="step-number">2</div>
-          <h3>Choose Storage</h3>
-          <p>Local or Google Drive</p>
+          <h3>Choose Action</h3>
+          <p>Explain, save, organize, or check safety</p>
         </div>
         <div class="step">
           <div class="step-number">3</div>
-          <h3>Access Anywhere</h3>
-          <p>Your research, available on any device</p>
+          <h3>Study Smarter</h3>
+          <p>Access your research anytime, anywhere</p>
         </div>
       </div>
     </div>
@@ -320,8 +428,8 @@
 
   <section class="cta">
     <div class="container">
-      <h2 style="font-size: 28px; margin-bottom: 20px;">Ready to study smarter?</h2>
-      <p style="margin-bottom: 30px; color: var(--text-secondary);">Add StudyGuard to your browser today.</p>
+      <h2 style="font-size: 28px; margin-bottom: 20px;">Ready to study smarter with StudyGuard?</h2>
+      <p style="margin-bottom: 30px; color: var(--text-secondary);">Add StudyGuard to your browser today and transform how you research online.</p>
       <a href="https://microsoftedge.microsoft.com/addons" class="cta-button">Get StudyGuard</a>
     </div>
   </section>
@@ -333,7 +441,7 @@
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
       </nav>
-      <p>&copy; 2026 StudyGuard . All rights reserved.</p>
+      <p>&copy; 2025 <span class="app-name">StudyGuard</span> Team. All rights reserved.</p>
     </div>
   </footer>
 
